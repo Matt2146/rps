@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    let timesWon = 0
+    function getComputerChoice(){
+        return Math.floor(Math.random()*3)
+    }
+    function playRound(playerSelection,computerSelection) {
+     // your code here!
+     
+     playerSelection = playerSelection.toUpperCase()
+     if (playerSelection === 'ROCK'|| playerSelection === "PAPER"||playerSelection == "SCISSORS"){
+        if (computerSelection == 0 && playerSelection == "ROCK"){
+            console.log("Tie")
+        } else if (computerSelection == 0 && playerSelection == "PAPER"){
+            console.log("Lose")
+        } else if (computerSelection == 1 && playerSelection == "PAPER"){
+            console.log("Tie")
+        } else if (computerSelection == 1 && playerSelection == "SCISSORS"){
+            console.log("Lose")
+        } else if (computerSelection == 2 && playerSelection == "SCISSORS"){
+            console.log("Tie")
+        } else if (computerSelection == 2 && playerSelection == "ROCK"){
+            console.log("Lose")
+        } else {    
+            console.log("Win!")
+            return timesWon++
+        }
+    }
+     else{
+        return console.log("Please enter a valid choice between Rock, Paper, or Scissors")
+     }
+    }
+     function gameRPS(){
+        while(timesWon < 5){
+            playerSelection = prompt("Please type your choice of Rock, Paper, or Scissors.")
+            computerSelection = getComputerChoice()
+            playRound(playerSelection,computerSelection)
+            console.log("You have won "+timesWon+ " times.")
+
+    }
+    }
+  </script>
+</body>
+</html>
